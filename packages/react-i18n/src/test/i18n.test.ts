@@ -1556,4 +1556,18 @@ describe('I18n', () => {
       expect(result).toBe(false);
     });
   });
+
+  describe('#hasCustomNameFormatter', () => {
+    it('returns true if custom name formatter exists', () => {
+      const i18n = new I18n(defaultTranslations, {locale: 'ja'});
+
+      expect(i18n.hasCustomNameFormatter()).toStrictEqual(true);
+    });
+
+    it('returns false if custom name formatter does not exist', () => {
+      const i18n = new I18n(defaultTranslations, {locale: 'en'});
+
+      expect(i18n.hasCustomNameFormatter()).toStrictEqual(false);
+    });
+  });
 });

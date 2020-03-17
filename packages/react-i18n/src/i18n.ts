@@ -357,6 +357,13 @@ export class I18n {
     return firstName;
   }
 
+  hasCustomNameFormatter() {
+    const customNameFormatter =
+      CUSTOM_NAME_FORMATTERS.get(this.locale) ||
+      CUSTOM_NAME_FORMATTERS.get(this.language);
+    return Boolean(customNameFormatter);
+  }
+
   private formatCurrencyExplicit(
     amount: number,
     options: Intl.NumberFormatOptions = {},
